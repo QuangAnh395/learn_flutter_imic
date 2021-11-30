@@ -11,32 +11,31 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
   void _incrementCounter() {
     setState(() {
-
       _counter++;
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       backgroundColor: Colors.yellow,
       appBar: AppBar(
-
         title: Text(widget.title),
       ),
       body: Center(
-
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            ElevatedButton(
+                onPressed: (){
+              showDialog(context: context, builder: (ctx) => const AlertDialog(title: Text('hello'),) );
+            }, child: const Text("show dialog")),
             const Text(
               'You have pushed the button this many times:',
             ),
@@ -47,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
